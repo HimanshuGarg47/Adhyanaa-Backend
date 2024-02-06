@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="text-xs text-yellow-500 tracking-widest font-medium title-font mb-1">Adhyanna</h1>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">"Welcome to Success Hub. Explore Interactive Activities, Upcoming Opportunities, Resources, and 24/7 Career Assistance – Your roadmap to professional excellence."</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+          </div>
+          <div class="flex flex-wrap">
+            <br>
+            <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+              <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Interactive Activities</h2>
+              <p class="leading-relaxed text-base mb-4">
+                "Engage, Learn, and Thrive: Explore Interactive Activities for an Enriching Experience!</p>
+              <a class="text-yellow-500 inline-flex items-center">Click Here 
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+              <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Upcoming Opportunities</h2>
+              <p class="leading-relaxed text-base mb-4">"Unlock future career success! Explore upcoming opportunities and events – webinars, seminars, and more – to stay ahead in your professional journey."</p>
+              <a class="text-yellow-500 inline-flex items-center" href="{% url 'scholarships' %}">Click Here
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+
+          
+            <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+              <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Resources</h2>
+              <p class="leading-relaxed text-base mb-4">"Educate, Inspire, Excel: Access a wealth of knowledge with our curated resources, including videos, blogs, and top educational links."</p>
+              <a href="{% url 'resedu' %}" class="text-yellow-500 inline-flex items-center">Click Here
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+              <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">24/7 Carrer Assistance </h2>
+              <p class="leading-relaxed text-base mb-4">"Navigate Your Career Journey with Ease: Meet Your 24/7 AI Career Assistant – Your Constant Companion in Professional Success!"</p>
+              <a href="{% url 'adhyaana' %}" class="text-yellow-500 inline-flex items-center">Click Here
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <button class="flex mx-auto mt-16 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Go to HTech</button>
+        </div>
+      </section>
+</body>

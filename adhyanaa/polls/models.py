@@ -14,3 +14,21 @@ class CareerProfessional(models.Model):
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
+    
+class Hackathon(models.Model):
+    url = models.URLField()
+
+    def __str__(self):
+        return self.url
+
+class Scholarship(models.Model):
+    url = models.URLField()
+
+    def __str__(self):
+        return self.url
+
+class EducationSite(models.Model):
+    url = models.URLField()
+
+    def __str__(self):
+        return self.url

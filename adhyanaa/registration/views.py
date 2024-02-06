@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required(login_url='login')
 def HomePage(request):
-    return render (request,'home.html')
+    print(f"I am authenticated login user")
+    return render (request,'registration/home.html')
 
 def SignupPage(request):
     if request.method=='POST':
@@ -20,7 +21,8 @@ def SignupPage(request):
 
             my_user=User.objects.create_user(uname,email,pass1)
             my_user.save()
-            return redirect('login')
+            print(f"I am authenticated signup user")
+            return redirect('home.html')
         
 
 

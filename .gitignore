@@ -6,7 +6,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*/*/__pycache__
+*/__pycache__
+
+.env/
+
 # Django
+__pycache__/
 *.log
 *.pot
 *.pyc

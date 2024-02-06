@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>   
+<section class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Dhyaana AI</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base"> "Meet Dhyanaa AI- A sophisticated platform, delivers personalized mental health recommendations to students, employing advanced technologies to provide comprehensive well-being support."</p>
+      </div>
+      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="name" class="leading-7 text-sm text-gray-600">What's your Question?</label>
+              <input type="text" id="query-input" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <button id="submit-btn" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit your Question</button>
+          </div>
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="message" class="leading-7 text-sm text-gray-600">Answer</label>
+              <textarea id="response-output" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+          </div>
+    </div>
+  </section>
+
+  <script type="importmap">
+    {
+        "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+    }
+</script>
+<script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+
+    // Fetch your API_KEY
+    const API_KEY = "AIzaSyBWenlAUSVLqLzxDeRObIBc8faIR4STdJU"; // Replace "..." with your actual API key
+
+    // Access your API key (see "Set up your API key" above)
+    const genAI = new GoogleGenerativeAI(API_KEY);
+
+    // Define a function to handle query submission
+    async function submitQuery() {
+        // Get the value of the query input
+        const query = document.getElementById('query-input').value;
+
+        // Display a loading message
+        document.getElementById('response-output').innerText = "Generating response...";
+
+        try {
+            // Get the generative model
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+            // Generate content based on the query
+            const result = await model.generateContent(query);
+            const response = await result.response;
+            const text = await response.text();
+
+            // Display the response below the text box
+            document.getElementById('response-output').innerText = text;
+        } catch (error) {
+            // Display an error message if an error occurs
+            console.error("Error generating response:", error);
+            document.getElementById('response-output').innerText = "Error generating response.";
+        }
+    }
+
+    // Attach event listener to submit button
+    document.getElementById('submit-btn').addEventListener('click', submitQuery);
+    </script>
+</body> 
+</html>
